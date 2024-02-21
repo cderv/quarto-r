@@ -11,6 +11,7 @@ revdepcheck::revdep_todo()
 
 # Add package to check
 to_run <- c("EpiNow2","OncoBayes2","Sleuth3","bain","breathteststan","clustermq","insight","parameters","personalized")
+cran_deps <- revdepcheck::cran_revdeps("quarto")
 revdepcheck::revdep_add(packages = to_run)
 # Add one other package
 revdepcheck::revdep_add(packages = "intkrige")
