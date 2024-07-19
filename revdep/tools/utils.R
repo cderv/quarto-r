@@ -1,7 +1,7 @@
 library(httr)
 
 # Setup
-id <- "95d57deb-57c4-427f-b382-de4bc222e491"
+id <- "5b87e6c5-fa9a-4821-81e4-2aa12044d8d1"
 cloud_url <- Sys.getenv("RSTUDIO_CLOUD_REVDEP_URL")
 cloud_url <- modify_url(cloud_url, path = glue::glue("staging/check/{id}"))
 auth_header <- add_headers('x-api-key' = Sys.getenv("RSTUDIO_CLOUD_REVDEP_KEY"))
@@ -24,7 +24,7 @@ as.period(ymd_hms(res_time$finished_timestamp) - ymd_hms(res_time$created_timest
 
 res <- GET(glue::glue("{cloud_url}/status"), auth_header)
 res <- content(res, as = "text")
-jqr::jq(res)
+jqr::jq(res, ".")
 
 res <- GET(glue::glue("{cloud_url}/status/SUCCEEDED"), auth_header)
 res <- content(res, as = "text")
@@ -71,7 +71,7 @@ pkg <- "CausalImpact"
 res <- GET(glue::glue("{cloud_url}/packages/{pkg}"), auth_header)
 res <- content(res, as = "text")
 jqr::jq(res, ".container.reason") # Out Of Memory issue ?
-res <- jqr::jq(res)
+res <- jqr::jq(res, ".")
 res
 
 ## Status log of all packages
