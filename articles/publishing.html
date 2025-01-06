@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">quarto</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.4.9003</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.4.4.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
 </nav><div class="container template-quarto">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1></h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Publishing</h1>
 
 
 
@@ -76,11 +76,11 @@
 
 
 
-    <header id="title-block-header" class="quarto-title-block"><h1 class="title">Publishing</h1></header><section class="section level3"><h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
-</h3>
+    <section class="level2"><h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
 <p>The <strong>quarto</strong> package includes several functions that enable you to publish static and interactive documents, websites, and books to <a href="https://posit.co/products/enterprise/connect/" class="external-link">Posit Connect</a> and <a href="https://www.shinyapps.io/" class="external-link">shinyapps.io</a>. When publishing to Posit Connect, both simple content publishing (local rendering) as well as code publishing (rendering on Connect) are supported.</p>
-</section><section class="section level3"><h3 id="accounts">Accounts<a class="anchor" aria-label="anchor" href="#accounts"></a>
-</h3>
+</section><section class="level2"><h2 id="accounts">Accounts<a class="anchor" aria-label="anchor" href="#accounts"></a>
+</h2>
 <p>Before publishing to Posit Connect or shinyapps.io you should ensure that you have an account configured for publishing.</p>
 <p>For Posit Connect, use the <code><a href="https://rstudio.github.io/rsconnect/reference/connectApiUser.html" class="external-link">rsconnect::connectUser()</a></code> function for the server you are publishing to. For example:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -90,8 +90,8 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">rsconnect</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/rsconnect/reference/setAccountInfo.html" class="external-link">setAccountInfo</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">'norahjones'</span>, token <span class="op">=</span> <span class="st">'AB6783FD23'</span>, secret <span class="op">=</span> <span class="st">'36x+k0bBy6W'</span><span class="op">)</span></span></code></pre></div>
 <p>Note that you can copy and paste this code from the <a href="https://www.shinyapps.io/admin/#/tokens" class="external-link">Tokens</a> page of your shinyapps.io admin panel.</p>
-</section><section class="section level3"><h3 id="documents">Documents<a class="anchor" aria-label="anchor" href="#documents"></a>
-</h3>
+</section><section class="level2"><h2 id="documents">Documents<a class="anchor" aria-label="anchor" href="#documents"></a>
+</h2>
 <p>Use the <code><a href="../reference/quarto_publish_doc.html">quarto_publish_doc()</a></code> function to publish a single document to Posit Connect. Note that the very <em>first time</em> that you publish you should specify both the <code>server</code> and <code>account</code> that you want to use for publishing. For example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/quarto-dev/quarto-r" class="external-link">quarto</a></span><span class="op">)</span></span>
@@ -104,8 +104,8 @@
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/quarto_publish_doc.html">quarto_publish_doc</a></span><span class="op">(</span><span class="st">"document.qmd"</span>, </span>
 <span>                   server <span class="op">=</span> <span class="st">"rsc.example.com"</span>, account <span class="op">=</span> <span class="st">"njones"</span>,</span>
 <span>                   render <span class="op">=</span> <span class="st">"server"</span><span class="op">)</span></span></code></pre></div>
-</section><section class="section level3"><h3 id="websites">Websites<a class="anchor" aria-label="anchor" href="#websites"></a>
-</h3>
+</section><section class="level2"><h2 id="websites">Websites<a class="anchor" aria-label="anchor" href="#websites"></a>
+</h2>
 <p>Use the <code><a href="../reference/quarto_publish_doc.html">quarto_publish_site()</a></code> function to publish a <a href="https://quarto.org/docs/websites/" class="external-link">website</a> or <a href="https://quarto.org/docs/books/" class="external-link">book</a> to Posit Connect. Note that the very <em>first time</em> that you publish you should specify both the <code>server</code> and <code>account</code> that you want to use for publishing. For example:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/quarto-dev/quarto-r" class="external-link">quarto</a></span><span class="op">)</span></span>
@@ -117,8 +117,8 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/quarto_publish_doc.html">quarto_publish_site</a></span><span class="op">(</span>server <span class="op">=</span> <span class="st">"rsc.example.com"</span>, account <span class="op">=</span> <span class="st">"njones"</span>,</span>
 <span>                    render <span class="op">=</span> <span class="st">"server"</span><span class="op">)</span></span></code></pre></div>
-</section><section class="section level3"><h3 id="interactive-docs">Interactive Docs<a class="anchor" aria-label="anchor" href="#interactive-docs"></a>
-</h3>
+</section><section class="level2"><h2 id="interactive-docs">Interactive Docs<a class="anchor" aria-label="anchor" href="#interactive-docs"></a>
+</h2>
 <p>You can publish Shiny <a href="https://quarto.org/docs/interactive/shiny/" class="external-link">interactive documents</a> to either Posit Connect or shinyapps.io.</p>
 <p>To publish to Posit Connect, specify both the <code>server</code> and <code>account</code> that you want to use for publishing (this is required for the first publish only). For example:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
